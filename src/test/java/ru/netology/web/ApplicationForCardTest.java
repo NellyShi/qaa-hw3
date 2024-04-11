@@ -18,7 +18,7 @@ class ApplicationForCardTest {
     }
 
     @Test
-    void shouldNotNameBeUnderscore() {
+    void shouldNotNameContainsUnderscore() {
         open("http://localhost:9999");
         $("[data-test-id=name] input").setValue("Шигапова_Нэлли");
         $("[data-test-id=phone] input").setValue("+79000000000");
@@ -28,7 +28,7 @@ class ApplicationForCardTest {
     }
 
     @Test
-    void shouldNameBeCyrillicAndSpace() {
+    void shouldNameBeCyrillicAndContainsSpace() {
         open("http://localhost:9999");
         $("[data-test-id=name] input").setValue("Шигапова    Нэлли");
         $("[data-test-id=phone] input").setValue("+79000000000");
@@ -48,7 +48,7 @@ class ApplicationForCardTest {
     }
 
     @Test
-    void shouldNotFirstCharPhoneBeNotPlus() {
+    void shouldFirstCharPhoneBeOnlyPlus() {
         open("http://localhost:9999");
         $("[data-test-id=name] input").setValue("Шигапова    Нэлли");
         $("[data-test-id=phone] input").setValue("79000000000");
